@@ -18,7 +18,7 @@ const servicesData = [
   },
   {
     title: "DJ and Audio",
-    image: "images/DJ and Audio.png",
+    image: "/images/DJ and Audio.png",
     headline: "Feel the beat. Live the moment.",
     body: "Professional DJ and audio solutions with quality sound systems, experienced DJs, professional setup, and customized playlists for your event.",
     highlights: "Premium Audio · Experienced DJs · Professional Setup · Custom Playlists"
@@ -67,7 +67,7 @@ const servicesData = [
   },
   {
     title: "Catering",
-    image: "/images/(Catering).png",
+    image: "/images/catering.png",
     headline: "Delicious food. Perfectly served.",
     body: "Delicious and tailored culinary experiences sure to delight your guests, featuring diverse menus and impeccable presentation.",
     highlights: "Quality Food · Hygiene & Freshness · Professional Service · Timely Service"
