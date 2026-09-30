@@ -67,7 +67,7 @@ const servicesData = [
   },
   {
     title: "Catering",
-    image: "/images/catering.png",
+    image: "/images/(Catering).png",
     headline: "Delicious food. Perfectly served.",
     body: "Delicious and tailored culinary experiences sure to delight your guests, featuring diverse menus and impeccable presentation.",
     highlights: "Quality Food · Hygiene & Freshness · Professional Service · Timely Service"
