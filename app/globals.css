@@ -730,7 +730,7 @@ button {
   background: rgba(0, 0, 0, 0.78);
   display: grid;
   place-items: center;
-  z-index: 50;
+  z-index: 1000;
 }
 
 .lightbox[hidden] {
@@ -752,8 +752,10 @@ button {
   border: 0;
   background: transparent;
   color: var(--gold);
-  font-size: 36px;
+  font-size: 48px;
   cursor: pointer;
+  z-index: 60;
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const galleryImages = [
   "/images/hero-left.png",
@@ -16,6 +17,11 @@ const galleryImages = [
 export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImgSrc, setLightboxImgSrc] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const openLightbox = (src) => {
     setLightboxImgSrc(src);
@@ -48,13 +54,19 @@ export default function Gallery() {
         </div>
       </section>
 
-      {!lightboxOpen ? null : (
+      {mounted && lightboxOpen && createPortal(
         <div className="lightbox" id="lightbox" onClick={(e) => {
           if (e.target.className === "lightbox") closeLightbox();
         }}>
-          <button className="lightbox-close" type="button" aria-label="Close gallery preview" onClick={closeLightbox}>&times;</button>
+          <button className="lightbox-close" type="button" aria-label="Close gallery preview" onClick={closeLightbox}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
           <img id="lightboxImg" alt="Gallery preview" src={lightboxImgSrc} />
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
